@@ -1,0 +1,15 @@
+* Fuzz Face-style NPN circuit (positive-ground silicon variant).
+* Paste into the workbench (Paste netlist) or open this .cir file.
+* Q pins are SPICE order: collector base emitter.
+.model 2N5088 npn(bf=200)
+C1 in Q1b 2.2u
+R1 vcc Q1c 33k
+R2 Q1b Q2e 100k
+Q1 Q1c Q1b 0 2N5088
+Q2 Q2c Q1c Q2e 2N5088
+R3 vcc Q2c 8.2k
+R4 Q2e 0 1k
+C2 Q2e 0 20u
+C3 Q2c pv2 10n
+P1 0 pv2 out 100k position=0.6 taper=log
+.end

@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "name": "Two-transistor silicon fuzz",
+  "components": [
+    {
+      "id": "C1",
+      "type": "capacitor",
+      "value": 0.0000022,
+      "x": 180,
+      "y": 205
+    },
+    {
+      "id": "Q1",
+      "type": "npn",
+      "value": 180,
+      "x": 355,
+      "y": 205
+    },
+    {
+      "id": "R1",
+      "type": "resistor",
+      "value": 33000,
+      "x": 355,
+      "y": 85
+    },
+    {
+      "id": "R2",
+      "type": "resistor",
+      "value": 100000,
+      "x": 225,
+      "y": 350
+    },
+    {
+      "id": "Q2",
+      "type": "npn",
+      "value": 250,
+      "x": 555,
+      "y": 205
+    },
+    {
+      "id": "R3",
+      "type": "resistor",
+      "value": 8200,
+      "x": 555,
+      "y": 85
+    },
+    {
+      "id": "R4",
+      "type": "resistor",
+      "value": 1000,
+      "x": 555,
+      "y": 350
+    },
+    {
+      "id": "C2",
+      "type": "capacitor",
+      "value": 0.00002,
+      "x": 735,
+      "y": 350
+    },
+    {
+      "id": "C3",
+      "type": "capacitor",
+      "value": 1e-8,
+      "x": 735,
+      "y": 205
+    },
+    {
+      "id": "R5",
+      "type": "resistor",
+      "value": 100000,
+      "x": 915,
+      "y": 350
+    }
+  ],
+  "connections": [
+    {
+      "a": "input",
+      "b": "C1.1"
+    },
+    {
+      "a": "C1.2",
+      "b": "Q1.b"
+    },
+    {
+      "a": "Q1.e",
+      "b": "ground"
+    },
+    {
+      "a": "battery",
+      "b": "R1.1"
+    },
+    {
+      "a": "R1.2",
+      "b": "Q1.c"
+    },
+    {
+      "a": "Q1.c",
+      "b": "Q2.b"
+    },
+    {
+      "a": "Q1.b",
+      "b": "R2.1"
+    },
+    {
+      "a": "R2.2",
+      "b": "Q2.e"
+    },
+    {
+      "a": "battery",
+      "b": "R3.1"
+    },
+    {
+      "a": "R3.2",
+      "b": "Q2.c"
+    },
+    {
+      "a": "Q2.e",
+      "b": "R4.1"
+    },
+    {
+      "a": "R4.2",
+      "b": "ground"
+    },
+    {
+      "a": "Q2.e",
+      "b": "C2.1"
+    },
+    {
+      "a": "C2.2",
+      "b": "ground"
+    },
+    {
+      "a": "Q2.c",
+      "b": "C3.1"
+    },
+    {
+      "a": "C3.2",
+      "b": "output"
+    },
+    {
+      "a": "output",
+      "b": "R5.1"
+    },
+    {
+      "a": "R5.2",
+      "b": "ground"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+open_bread/
+build/
+build-core/
+dist/
+backups/
+__pycache__/
+*.pyc
+.DS_Store
+.openai/
+node_modules/

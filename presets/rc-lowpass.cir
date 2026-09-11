@@ -1,0 +1,4 @@
+* BREAD R/C-only SPICE example: 1.59 kHz lowpass
+R1 in out 10k
+C1 out 0 10n
+.end

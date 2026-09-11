@@ -1,0 +1,1 @@
+{"name":"bread-workbench","version":"0.1.0","private":true,"type":"module","scripts":{"test":"node tests/web-engine.mjs && node tests/worklet-test.mjs","start":"python3 serve.py"}}

@@ -1,0 +1,25 @@
+* Classic NPN Fuzz Face, biased so it plays on the bench.
+* Paste into the workbench (Paste netlist) or open this .cir file.
+* The classic circuit is PNP on the +9V rail. Flipped to NPN/ground it
+* needs two starts the original implies: a Q1 collector load to VCC
+* (R1c 33k) and a Q1-base -> Q2-emitter bias path (R2 100k). Without
+* them the whole pair sits cutoff (Q2.c rails to 9V, silent).
+* Nodes: 0=Gnd, 1=In, 2=Out, 10=VCC (+9V)
+V1 10 0 DC 9V
+C1 1 3 2.2uF
+R1c 10 4 33k
+Q1 4 3 0 Q_NPN_1
+R1 4 3 100k
+R2 3 6 100k
+Q2 5 4 6 Q_NPN_2
+R3 7 5 8.2k
+R2a 10 7 470
+RFuzz 6 0 1k
+C2 6 0 20uF
+C3 7 8 0.01uF
+RVol 8 2 0.001
+RLoad 2 0 500k
+.model Q_NPN_1 NPN(BF=90 IS=1E-14)
+.model Q_NPN_2 NPN(BF=120 IS=1E-14)
+.trans 10u 20ms
+.end
